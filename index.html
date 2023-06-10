@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.1/css/fontawesome.min.css" integrity="sha384-QYIZto+st3yW+o8+5OHfT6S482Zsvz2WfOzpFSXMF9zqeLcFV0/wlZpMtyFcZALm" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<!--J'ajoute une couleur de background pour mettre en valeur la card-->
+<body class="bg-light">
+        
+    <!--Je définis le conteneur principal avec la classe item, j'ajoute une marge top et left.-->
+        <div class="item1 mt-5 ms-5">
+            <!--Deuxième conteneur, avec le display flex pour que les infos et la montre se mettent côte à côte-->
+            <div class="d-flex">
+                <!--Troisième conteneur qui contient les infos, que je veux afficher en mode colonne, j'ai mis une classe "prout" pour le css, j'étais pas inspiré-->
+                <div class="d-flex flex-column prout">
+                    <div>
+                        <h1>
+                            Simple
+                        <br />
+                            Gray
+                        </h1>
+                        <p>
+                            $99.99
+                        </p>
+                    </div>
+                    <!--Partie avec les notes et étoiles-->
+                    <div class="rating">
+                        <div class="stars">
+                            <i class="fa fa-star gold"></i>
+                            <i class="fa fa-star gold"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                        </div>
+                        <a href="#">Voir les avis.</a>
+                    </div>
+                </div>
+                <img src="montre.jpg" height="200px"/>
+            </div>
+            <!--La partie card, je la met pas en display flex, car en css je vais la placer avec une position relative-->
+            <div class="caption">
+                <!-- On enlève la bordure avec border-0, on rajoute une ptite marge à gauche-->
+                <div class="card ms-5 border-0" style="width: 18rem;">
+                    <!--On centre le texte dans la card-->
+                    <div class="card-body text-center ">
+                        <p class="card-title">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Numquam cum obcaecati consectetur! Impedit, quaerat similique.</p>
+                        <!--Petite balise avec une classe separator, qui fera un trait entre les deux sections-->
+                        <div class="separator border-top border-danger">
+                            <p class="card-text">Quantity</p>
+                            <!--Code avec du javascript dessus, en gros c'est pour styliser l'input number, qui n'est pas personnalisable juste avec du css-->
+                            <div class="number-input">
+                                <button onclick="this.parentNode.querySelector('input[type=number]').stepDown()" class="bg-dark" ></button>
+                                <input class="quantity" min="0" name="quantity" value="1" type="number">
+                                <button onclick="this.parentNode.querySelector('input[type=number]').stepUp()" class="plus bg-dark"></button>
+                            </div>
+                            <a href="#" class="btn btn-danger rounded-0 bolder mt-3"><strong>ADD TO CART</strong></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+</body>
+</html>

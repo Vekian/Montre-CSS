@@ -1,0 +1,160 @@
+/*CSS sur la partie ratings*/
+
+/* Par défaut, une étoile est en gris,
+   avec un padding et un curseur en forme de main. */
+   .fa-star {
+	color: gray;
+	cursor: pointer;
+	padding: 0.0625rem;
+}
+/* Si elle porte en plus la classe '.gold', elle sera en jaune. */
+.fa-star.gold {
+	color: #ffdc0f;
+}
+
+/* Le parent global '.rating' positionne le groupe des étoiles et le lien en colonne */
+.rating {
+	display: flex;
+	flex-direction: column;
+	
+}
+
+	/* Le groupe '.stars' positionne les étoiles
+		 les unes à côté des autres sans espacements. */
+	.stars {
+		display: inline-flex;
+		font-size: 3em;
+	}
+
+	/**
+	 * Et là opère la magie du ':hover' !
+	 */
+
+	/* A l'état :hover sur le parent '.rating',
+		 on force TOUTES les étoiles à passer en jaune. */
+	.stars:hover .fa-star {
+		color: #ffdc0f;
+	}
+	/* Et si la souris survole une étoile en particulier,
+		 on sélectionne toutes les étoiles qui sont APRÈS celle-ci
+		 grâce à l'opérateur '~' et on les force en GRIS */
+	.stars .fa-star:hover ~ .fa-star {
+		color: gray;
+	}
+
+
+	
+
+
+/* la partie card, on lui met une position relative, à droite et en dehors du conteneur principal. Avec overflow hidden du conteneur principal, elle sera donc cachée. */
+ .card {
+	position: relative;
+	top: -250px;
+	left: 840px;
+	/*On ajoute une transition sur left, pour qu'elle revienne doucement sur la gauche dans le conteneur principal avec un hover*/
+	transition: left 1s;
+}
+
+
+
+/* Conteneur principal, on définit une largeur et on ajoute une transition sur celle-ci*/
+.item1 {
+	background-color: white;
+	border-radius: 5%;
+	/* on ajoute une ombre au conteneur principal, c'est joli */
+	box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	/* On ajoute une position relative, pour le décaler un peu sur la droite*/
+	position: relative;
+	left: 200px;
+	width: 550px;
+	transition: width 1s, left 1s;
+	height: 340px;
+	cursor: pointer;
+	/* Overflow hidden va permettre de cacher ce qui dépasse du conteneur principal. */
+	overflow: hidden;
+	padding: 50px;
+}
+
+/* On ajoute une petite transition pour que le texte des infos se décale un peu sur la gauche lors du hover*/
+.prout {
+	transform: translate(30px,0);
+	transition: transform 1s;
+}
+
+/* Ca va augmenter la taille du conteneur principal avec un hover et le déplacer un peu sur la gauche */
+.item1:hover {
+	width: 850px;
+	left: 100px;
+}
+
+/*On déplace la card sur la gauche, ce qui va la faire rentrer dans le conteneur principal agrandi. Tadaa, la carte apparait! */
+.item1:hover .card {
+	left: 420px;
+}
+
+/* On déplace un petit peu le texte des infos sur la gauche */
+.item1:hover .prout {
+	transform: translate(10px, 0);
+}
+
+/* style de l'input number */
+input[type="number"] {
+	-webkit-appearance: textfield;
+	-moz-appearance: textfield;
+	appearance: textfield;
+  }
+  
+  input[type=number]::-webkit-inner-spin-button,
+  input[type=number]::-webkit-outer-spin-button {
+	-webkit-appearance: none;
+  }
+  
+  .number-input {
+	border: 2px solid #ddd;
+	display: inline-flex;
+  }
+  
+  .number-input,
+  .number-input * {
+	box-sizing: border-box;
+  }
+  
+  .number-input button {
+	outline:none;
+	-webkit-appearance: none;
+	background-color: transparent;
+	border: none;
+	align-items: center;
+	justify-content: center;
+	width: 3rem;
+	height: 3rem;
+	cursor: pointer;
+	margin: 0;
+	position: relative;
+  }
+  
+  .number-input button:before,
+  .number-input button:after {
+	display: inline-block;
+	position: absolute;
+	content: '';
+	width: 1rem;
+	height: 2px;
+	background-color: #ffffff;
+	transform: translate(-50%, -50%);
+  }
+  .number-input button.plus:after {
+	transform: translate(-50%, -50%) rotate(90deg);
+  }
+  
+  .number-input input[type=number] {
+	font-family: sans-serif;
+	max-width: 5rem;
+	padding: .5rem;
+	border: solid #ddd;
+	border-width: 0 2px;
+	font-size: 2rem;
+	height: 3rem;
+	font-weight: bold;
+	text-align: center;
+  }
